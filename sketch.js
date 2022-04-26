@@ -16,6 +16,7 @@ var higherground;
 var con;
 var con2;
 var rope;
+var rope;
 var bubble,bubble_img;
 
 function preload()
@@ -77,13 +78,11 @@ function setup() {
   button = createImg('cut_btn.png');
   button.position(200,320);
   button.size(50,50);
-
+  button.mouseClicked(drop);
   button2 = createImg('cut_btn.png');
   button2.position(30,420);
   button2.size(50,50);
-
- // escreva um bloco de código correto para adicionar um botão para cortar a corda 
-
+  button2.mouseClicked(drop);
   ellipseMode(RADIUS);
 }
 
@@ -111,6 +110,7 @@ function draw()
    bubble.visible = false;
     World.remove(engine.world,fruit);
     fruit = null;
+    bunny.changeAnimation(eat, 'eating');
    //Código para alterar a animação do coelho quando uma colisão for detectada.
   }
   
